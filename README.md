@@ -1,9 +1,9 @@
 # Go-Now
-<h3><b>Este é o aplicativo Go Now!  o qual é o projeto do TCC de graduação em Sistemas de Informação na UNISUL</b></h3>.
+<h3><b>Este é o aplicativo Go Now!  o qual é o projeto do TCC de graduação em Sistemas de Informação na UNISUL.</b></h3>
 <br/><br/>
 <b>Objetivo deste aplicativo:</b><br/><br/>
   -Permitir que usuários que irão aos mesmos eventos possam interagir entre si.<br/><br/>
-<b>Funcionalidades que terá:<br/><br/>
+<b>Funcionalidades que terá:</b><br/><br/>
   -Feed com os eventos da sua região;<br/>
   -Sala dos Eventos (Quando clicar que comparecerá no evento abrirá a sala com os membros);<br/>
   -Perfil do usuário (Nome, descrição, 5 imagens);<br/>
