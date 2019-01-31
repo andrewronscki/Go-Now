@@ -12,6 +12,7 @@ import {
     Alert
 } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
+import icon from '../../assets/imgs/addIcon.png';
 
 class AddPhoto extends Component {
     state = {
@@ -32,7 +33,7 @@ class AddPhoto extends Component {
     }
 
     save = async () => {
-        Alert.alert('Imagem adicionada!', this.state.comment);
+        Alert.alert('Imagem adicionada!');
     }
 
     render() {
@@ -40,23 +41,46 @@ class AddPhoto extends Component {
             <ScrollView>
                 <View style={styles.container}>
                     <Text style={styles.title}>Fotos</Text>
-                    <View style={styles.imageContainer}>
-                        <Image source={this.state.image}
-                            style={styles.image} />
-                    </View>
-                    <View>
-                        <TouchableOpacity onPress={this.pickImage}
-                            style={styles.buttom}>
-                            <Text style={styles.buttomText}>Escolha a foto</Text>
-                        </TouchableOpacity>                    
-                        <TouchableOpacity onPress={this.save}
-                            style={styles.buttom}>
-                            <Text style={styles.buttomText}>Salvar</Text>
+                    <View style={styles.containerButtom}>
+                        <TouchableOpacity onPress={this.pickImage}>
+                            <View source={icon} style={styles.imageContainer}>
+                                <Image source={this.state.image}
+                                    style={styles.image} />                          
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={this.pickImage}>
+                            <View style={styles.imageContainer}>
+                                <Image source={this.state.image}
+                                    style={styles.image} />                          
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={this.pickImage}>
+                            <View style={styles.imageContainer}>
+                                <Image source={this.state.image}
+                                    style={styles.image} />                          
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={this.pickImage}>
+                            <View style={styles.imageContainer}>
+                                <Image source={this.state.image}
+                                    style={styles.image} />                          
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={this.pickImage}>
+                            <View style={styles.imageContainer}>
+                                <Image source={this.state.image}
+                                    style={styles.image} />                          
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={this.pickImage}>
+                            <View style={styles.imageContainer}>
+                                <Image source={this.state.image}
+                                    style={styles.image} />                          
+                            </View>
                         </TouchableOpacity>
                     </View>
-                </View>
-            </ScrollView>
-        
+                </View>  
+            </ScrollView>      
         );
     }
 }
@@ -72,24 +96,32 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     imageContainer: {
-        width: '90%',
-        height: Dimensions.get('window').width / 2,
+        width: Dimensions.get('window').width / 4,
+        height: Dimensions.get('window').width / 4,
         backgroundColor: '#EEE',
-        marginTop: 10
+        marginTop: 10,
+        margin: 10,
     },
     image: {
         width: '100%',
-        height: Dimensions.get('window').width / 2,
+        height: '100%',
         resizeMode: 'center'
     },
     buttom: {
         marginTop: 30,
         padding: 10,
-        backgroundColor: '#4286f4'
+        backgroundColor: '#4286f4',
+        marginRight: 5,
     },
     buttomText: {
         fontSize: 20,
         color: '#FFF'
+    },
+    containerButtom: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        display: 'flex',
+        justifyContent: 'center',
     }
 });
 

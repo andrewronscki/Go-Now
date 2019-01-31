@@ -29,14 +29,16 @@ class Login extends Component {
                 <TextInput placeholder='Senha' style={styles.input}
                     secureTextEntry={true} value={this.state.password}
                     onChangeText={password => this.setState({password})} />
-                <TouchableOpacity onPress={this.login} style={styles.buttom}>
-                    <Text style={styles.buttomText}>Login</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => {
-                    this.props.navigation.navigate('Register')
-                    }} style={styles.buttom}>
-                    <Text style={styles.buttomText}>Criar nova conta</Text>
-                </TouchableOpacity>
+                <View style={styles.containerButtom}>
+                    <TouchableOpacity onPress={this.login} style={styles.buttom}>
+                        <Text style={styles.buttomText}>Entrar</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => {
+                        this.props.navigation.navigate('Register')
+                        }} style={styles.buttom}>
+                        <Text style={styles.buttomText}>Criar nova conta</Text>
+                    </TouchableOpacity>
+                </View>
 
             </View>
         );
@@ -48,12 +50,13 @@ const styles = StyleSheet.create({
         flex:1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#ff9c50'
+        backgroundColor: '#FFF'
     },
     buttom: {
         marginTop: 30,
         padding: 10,
-        backgroundColor: '#4286f4'
+        backgroundColor: '#4286f4',
+        marginRight: 5
     },
     buttomText: {
         fontSize: 20,
@@ -74,6 +77,10 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         backgroundColor: '#ff9c50'
     },
+    containerButtom: {
+        flexDirection: 'row',
+        flexWrap: 'wrap'
+    }
 });
 
 export default Login;

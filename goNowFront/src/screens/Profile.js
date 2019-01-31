@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+    ScrollView,
     View,
     Text,
     StyleSheet,
@@ -15,19 +16,25 @@ class Profile extends Component {
     render() {
         const options = { email: 'fulanodetal@gmail.com', secure: true};
         return (
-          <View style={styles.container}>
-            <Gravatar options={options} style={styles.avatar} />
-            <Text style={styles.nickname}> Fulano de tal</Text>
-            <Text style={styles.email}>fulanodetal@gmail.com</Text>
-            <Text style={styles.description}>Sou muito legal legal legal legal legal legal legal
-            legallegallegallegallegallegallegallegallegallegallegallegallegallegallegallegallegallegal
-            </Text>
-            <AddPhoto style={styles.addPhoto} />
-            <TouchableOpacity onPress={this.logout}
-                style={styles.buttom}>
-                <Text style={styles.buttomText}> Sair </Text>    
-            </TouchableOpacity>
-          </View>  
+            <ScrollView>
+                <View style={styles.container}>
+                    <Gravatar options={options} style={styles.avatar} />
+                    <Text style={styles.title}>Nome</Text>
+                    <Text style={styles.nickname}> Fulano de tal</Text>
+                    <Text style={styles.title}>E-mail</Text>
+                    <Text style={styles.email}>fulanodetal@gmail.com</Text>
+                    <Text style={styles.title}>Descrição</Text>
+                    <Text style={styles.description}>Sou muito legal legal legal legal legal legal legal
+                    legallegallegallegallegallegallegallegallegallegallegallegallegallegallegallegallegallegal
+                    </Text>
+                    <AddPhoto style={styles.addPhoto} />
+                    <View style={styles.containerButtom}>
+                        <TouchableOpacity onPress={this.logout}>
+                            <Text style={styles.buttomText}> Sair </Text>    
+                        </TouchableOpacity>
+                    </View>
+                </View>  
+          </ScrollView>
         );
     }
 
@@ -46,7 +53,6 @@ const styles = StyleSheet.create({
     nickname:{
         marginTop: 5,
         fontSize: 20,
-        fontWeight: 'bold'
     },
     description:{
         marginTop: 5,
@@ -58,19 +64,24 @@ const styles = StyleSheet.create({
         marginTop: 5,
         fontSize: 20
     },
-    buttom:{
-        marginTop: 30,
-        padding: 10,
-        backgroundColor: '#4286f4'
-    },
     buttomText:{
         fontSize: 20,
-        color: '#FFF'
+        color: '#000'
     },
-    addPhoto:{
-        width: '100%'
-
+    containerButtom: {
+        marginTop: 10,
+        display: 'flex',
+        justifyContent: 'flex-end',
+        marginLeft: '80%',
+    },
+    title: {
+        marginTop: 5,
+        fontSize: 20,
+        marginLeft: 20,
+        marginRight: 20,
+        fontWeight: 'bold'
     }
+    
 });
 
 export default Profile;
