@@ -13,21 +13,19 @@ Funcionalidades que terá:
 Ele está em desenvolvimento no momento (sendo feito o frontend).
 
 Até o momento está sendo usado as seguintes dependências:
-"dependencies": {
-    "axios": "^0.18.0",
-    "moment": "^2.22.2",
-    "react": "16.6.1",
-    "react-native": "0.57.7",
-    "react-native-action-button": "^2.8.5",
-    "react-native-gravatar": "^1.0.2",
-    "react-native-image-picker": "^0.28.0",
-    "react-native-swipeable": "^0.6.0",
-    "react-native-vector-icons": "^6.1.0",
-    "react-navigation": "^2.14.2",
-    "react-redux": "^5.0.7",
-    "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
-  }
+  -axios
+  -moment
+  -react
+  -react-native
+  -react-native-action-button
+  -react-native-gravatar
+  -react-native-image-picker
+  -react-native-swipeable
+  -react-native-vector-icons
+  -react-navigation
+  -react-redux
+  -redux
+  -redux-thunk
   
 Pontos futuros:
    -integrar com Firebase e Facebook.
