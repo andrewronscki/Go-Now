@@ -6,11 +6,11 @@ import {
     }
     from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Feed from './screens/Feed'
-import Profile from './screens/Profile'
-import Login from './screens/Login'
-import Register from './screens/Register'
-import Chat from './screens/Chat'
+import Feed from './screens/Feed';
+import Profile from './screens/Profile';
+import Login from './screens/Login';
+import Register from './screens/Register';
+import Chat from './screens/Chat';
 
 const authRouter = createStackNavigator({
     Login: {screen: Login, navigationOptions: {title:'Login'}},
@@ -63,5 +63,5 @@ const MenuConfig = {
     }
 }
 
-const MenuNavigator = createBottomTabNavigator(MenuRoutes, MenuConfig)
-export default MenuNavigator
+const MenuNavigator = createBottomTabNavigator(MenuRoutes, MenuConfig);
+export default MenuNavigator;
