@@ -6,7 +6,7 @@
 <b>Funcionalidades que terá:</b><br/><br/>
   -Feed com os eventos da sua região;<br/>
   -Sala dos Eventos (Quando clicar que comparecerá no evento abrirá a sala com os membros);<br/>
-  -Perfil do usuário (Nome, descrição, 5 imagens);<br/>
+  -Perfil do usuário (Nome, descrição, 6 imagens);<br/>
   -Conversas (Abrirá todas suas conversas);<br/>
   -Chat (Ao clicar em uma conversa, abrirá o chat).<br/><br/>
  
