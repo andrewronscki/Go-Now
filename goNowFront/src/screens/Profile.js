@@ -6,8 +6,8 @@ import {
     StyleSheet,
     TouchableOpacity
 } from 'react-native';
-import {Gravatar} from 'react-native-gravatar';
 import AddPhoto from './AddPhoto';
+import Header from '../components/Header';
 
 class Profile extends Component {
     logout = () => {
@@ -18,7 +18,7 @@ class Profile extends Component {
         return (
             <ScrollView>
                 <View style={styles.container}>
-                    <Gravatar options={options} style={styles.avatar} />
+                    <Header />
                     <Text style={styles.title}>Nome</Text>
                     <Text style={styles.nickname}> Fulano de tal</Text>
                     <Text style={styles.title}>E-mail</Text>
@@ -41,18 +41,13 @@ class Profile extends Component {
 }
 const styles = StyleSheet.create({
     container:{
-        flex: 1,
-        alignItems: 'center'
-    },
-    avatar:{
-        width: 100,
-        height: 100,
-        borderRadius: 75,
-        marginTop: 10
+        flex: 1
     },
     nickname:{
         marginTop: 5,
         fontSize: 20,
+        marginLeft: 20,
+        marginRight: 20
     },
     description:{
         marginTop: 5,
@@ -62,7 +57,9 @@ const styles = StyleSheet.create({
     },
     email:{
         marginTop: 5,
-        fontSize: 20
+        fontSize: 20,
+        marginLeft: 20,
+        marginRight: 20
     },
     buttomText:{
         fontSize: 20,
@@ -79,7 +76,8 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginLeft: 20,
         marginRight: 20,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        
     }
     
 });

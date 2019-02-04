@@ -30,13 +30,13 @@ class Login extends Component {
                     secureTextEntry={true} value={this.state.password}
                     onChangeText={password => this.setState({password})} />
                 <View style={styles.containerButtom}>
-                    <TouchableOpacity onPress={this.login} style={styles.buttom}>
-                        <Text style={styles.buttomText}>Entrar</Text>
-                    </TouchableOpacity>
                     <TouchableOpacity onPress={() => {
                         this.props.navigation.navigate('Register')
                         }} style={styles.buttom}>
                         <Text style={styles.buttomText}>Criar nova conta</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={this.login} style={styles.buttom}>
+                        <Text style={styles.buttomText}>Entrar</Text>
                     </TouchableOpacity>
                 </View>
 

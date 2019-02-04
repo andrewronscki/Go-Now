@@ -19,7 +19,7 @@ class AddPhoto extends Component {
         image: null,
         comment: '',
     }
-
+    
     pickImage = () => {
         ImagePicker.showImagePicker({
             title: 'Escolha a imagem',
