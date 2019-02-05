@@ -16,18 +16,77 @@ import icon from '../../assets/imgs/addIcon.png';
 
 class AddPhoto extends Component {
     state = {
-        image: null,
-        comment: '',
+        image1: null,
+        image2: null,
+        image3: null,
+        image4: null,
+        image5: null,
+        image6: null
     }
     
-    pickImage = () => {
+    pickImage1 = () => {
         ImagePicker.showImagePicker({
             title: 'Escolha a imagem',
             maxHeight: 600,
             maxWidth: 800
         }, res => {
             if (!res.didCancel) {
-                this.setState({ image: { uri: res.uri, base64: res.data } });
+                this.setState({ image1: { uri: res.uri, base64: res.data } });
+            }
+        });
+    }
+    pickImage2 = () => {
+        ImagePicker.showImagePicker({
+            title: 'Escolha a imagem',
+            maxHeight: 600,
+            maxWidth: 800
+        }, res => {
+            if (!res.didCancel) {
+                this.setState({ image2: { uri: res.uri, base64: res.data } });
+            }
+        });
+    }
+    pickImage3 = () => {
+        ImagePicker.showImagePicker({
+            title: 'Escolha a imagem',
+            maxHeight: 600,
+            maxWidth: 800
+        }, res => {
+            if (!res.didCancel) {
+                this.setState({ image3: { uri: res.uri, base64: res.data } });
+            }
+        });
+    }
+    pickImage4 = () => {
+        ImagePicker.showImagePicker({
+            title: 'Escolha a imagem',
+            maxHeight: 600,
+            maxWidth: 800
+        }, res => {
+            if (!res.didCancel) {
+                this.setState({ image4: { uri: res.uri, base64: res.data } });
+            }
+        });
+    }
+    pickImage5 = () => {
+        ImagePicker.showImagePicker({
+            title: 'Escolha a imagem',
+            maxHeight: 600,
+            maxWidth: 800
+        }, res => {
+            if (!res.didCancel) {
+                this.setState({ image5: { uri: res.uri, base64: res.data } });
+            }
+        });
+    }
+    pickImage6 = () => {
+        ImagePicker.showImagePicker({
+            title: 'Escolha a imagem',
+            maxHeight: 600,
+            maxWidth: 800
+        }, res => {
+            if (!res.didCancel) {
+                this.setState({ image6: { uri: res.uri, base64: res.data } });
             }
         });
     }
@@ -42,39 +101,39 @@ class AddPhoto extends Component {
                 <View style={styles.container}>
                     <Text style={styles.title}>Fotos</Text>
                     <View style={styles.containerButtom}>
-                        <TouchableOpacity onPress={this.pickImage}>
+                        <TouchableOpacity onPress={this.pickImage1}>
                             <View source={icon} style={styles.imageContainer}>
-                                <Image source={this.state.image}
+                                <Image source={this.state.image1}
                                     style={styles.image} />                          
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={this.pickImage}>
+                        <TouchableOpacity onPress={this.pickImage2}>
                             <View style={styles.imageContainer}>
-                                <Image source={this.state.image}
+                                <Image source={this.state.image2}
                                     style={styles.image} />                          
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={this.pickImage}>
+                        <TouchableOpacity onPress={this.pickImage3}>
                             <View style={styles.imageContainer}>
-                                <Image source={this.state.image}
+                                <Image source={this.state.image3}
                                     style={styles.image} />                          
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={this.pickImage}>
+                        <TouchableOpacity onPress={this.pickImage4}>
                             <View style={styles.imageContainer}>
-                                <Image source={this.state.image}
+                                <Image source={this.state.image4}
                                     style={styles.image} />                          
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={this.pickImage}>
+                        <TouchableOpacity onPress={this.pickImage5}>
                             <View style={styles.imageContainer}>
-                                <Image source={this.state.image}
+                                <Image source={this.state.image5}
                                     style={styles.image} />                          
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={this.pickImage}>
+                        <TouchableOpacity onPress={this.pickImage6}>
                             <View style={styles.imageContainer}>
-                                <Image source={this.state.image}
+                                <Image source={this.state.image6}
                                     style={styles.image} />                          
                             </View>
                         </TouchableOpacity>
