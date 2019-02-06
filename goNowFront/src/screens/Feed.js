@@ -6,7 +6,6 @@ import { StyleSheet,
  } from 'react-native';
 import Header from '../components/Header';
 import Post from '../components/Post';
-import ToGoOrNot from '../components/ToGoOrNot';
 
 class Feed extends Component {
     state = {

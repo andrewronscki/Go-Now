@@ -8,7 +8,8 @@ import {
     TouchableOpacity 
 } from 'react-native';
 import AwesomeAlert from 'react-native-awesome-alerts';
-import ToGoOrNot from './ToGoOrNot';
+import EventMember from '../screens/EventMember';
+import MenuNavigator from '../Navigator';
 
 class Post extends Component {
     
@@ -18,15 +19,18 @@ class Post extends Component {
       };
      
     showAlert = () => {
-    this.setState({
-        showAlert: true
-    });
+        this.setState({
+            showAlert: true
+        });
     };
     
     hideAlert = () => {
-    this.setState({
-        showAlert: false
-    });
+        this.setState({
+            showAlert: false
+        });
+    };
+    iWillGo = () => {
+        this.props.navigation.navigate('EventMember');
     };
     
     render(){
@@ -41,21 +45,21 @@ class Post extends Component {
                 <AwesomeAlert
                 show={showAlert}
                 showProgress={false}
-                title="E aí!"
-                message="Você marcará presença no evento?"
+                title='E aí!'
+                message='Você marcará presença no evento?'
                 closeOnTouchOutside={true}
                 closeOnHardwareBackPress={false}
                 showCancelButton={true}
                 showConfirmButton={true}
-                cancelText="Não"
-                confirmText="Sim, irei"
-                confirmButtonColor="#0b84f5"
-                cancelButtonColor="#b52222"
+                cancelText='Não'
+                confirmText='Sim, irei'
+                confirmButtonColor='#0b84f5'
+                cancelButtonColor='#b52222'
                 onCancelPressed={() => {
                     this.hideAlert();
                 }}
                 onConfirmPressed={() => {
-                    this.hideAlert();
+                    this.iWillGo();
                 }}
                 />
             </TouchableOpacity>       
