@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { login } from '../store/actions/user';
 import {    
     View,
     Text,
@@ -11,11 +13,13 @@ import icon from '../../assets/imgs/login.png';
 
 class Login extends Component {
     state = {
+        name: 'Temporario',
         email: '',
         password: ''
     }
 
     login = () => {
+        this.props.onLogin({ ...this.state });
         this.props.navigation.navigate('Profile');
     }
     render() {
@@ -83,4 +87,10 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Login;
+const mapDispatchToProps = dispatch  => {
+    return {
+        onLogin: user => dispatch(login(user))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Login)

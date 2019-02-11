@@ -14,19 +14,6 @@ import Chat from './screens/Chat';
 import EventMember from './screens/EventMember';
 import Post from './components/Post';
 
-const eventRouter = createStackNavigator({
-    EventMember: {screen: EventMember, navigationOptions: {title:'EventMember'}},
-},{
-    initialRouteName: 'Post'
-});
-
-const eventOrFeedRouter = createSwitchNavigator({
-    Feed: Feed,
-    Event: eventRouter,
-},{
-    initialRouteName: 'Feed'
-});
-
 const authRouter = createStackNavigator({
     Login: {screen: Login, navigationOptions: {title:'Login'}},
     Register: {screen: Register, navigationOptions: {title: 'Register'}},
@@ -38,13 +25,13 @@ const authRouter = createStackNavigator({
     Profile: Profile,
     Auth: authRouter
 },{
-    initialRouteName: 'Profile'
+    initialRouteName: 'Auth'
 });
 
 const MenuRoutes = {
     Feed: {
         name: 'Feed',
-        screen: eventOrFeedRouter,
+        screen: Feed,
         navigationOptions: {
             title: 'Eventos',
             tabBarIcon: ({ tintColor }) =>
