@@ -14,6 +14,11 @@ import Chat from './screens/Chat';
 import EventMember from './screens/EventMember';
 import Post from './components/Post';
 
+export const EventMemberRouter = createSwitchNavigator({
+    EventMember: EventMember,
+    Feed: Feed
+ });
+
 const authRouter = createStackNavigator({
     Login: {screen: Login, navigationOptions: {title:'Login'}},
     Register: {screen: Register, navigationOptions: {title: 'Register'}},

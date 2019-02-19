@@ -34,14 +34,15 @@ class Login extends Component {
                     secureTextEntry={true} value={this.state.password}
                     onChangeText={password => this.setState({password})} />
                 <View style={styles.containerButtom}>
+                    <TouchableOpacity onPress={this.login} style={styles.buttomLogin}>
+                        <Text style={styles.buttomTextLogin}>Entrar</Text>
+                    </TouchableOpacity>
                     <TouchableOpacity onPress={() => {
                         this.props.navigation.navigate('Register')
-                        }} style={styles.buttom}>
-                        <Text style={styles.buttomText}>Criar nova conta</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={this.login} style={styles.buttom}>
-                        <Text style={styles.buttomText}>Entrar</Text>
-                    </TouchableOpacity>
+                        }} style={styles.buttomRegister}>
+                        <Text>Não possui uma conta ainda?</Text>
+                        <Text style={styles.buttomTextRegister}> Criar conta</Text>
+                    </TouchableOpacity>                    
                 </View>
 
             </View>
@@ -56,15 +57,28 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#FFF'
     },
-    buttom: {
+    buttomLogin: {
         marginTop: 30,
         padding: 10,
         backgroundColor: '#4286f4',
-        marginRight: 5
+        marginRight: 5,
     },
-    buttomText: {
-        fontSize: 20,
-        color: '#FFF'
+    buttomTextLogin: {
+        fontSize: 25,
+        color: '#FFF',
+        paddingLeft: 15,
+        paddingRight: 15,
+        
+    },
+    buttomRegister: {
+        marginTop: 15,
+        flexDirection: 'row',
+        flexWrap: 'wrap'
+    },
+    buttomTextRegister: {
+        fontSize: 15,
+        color: '#000',
+        
     },
     input: {
         marginTop: 20,
@@ -76,14 +90,15 @@ const styles = StyleSheet.create({
         paddingLeft: 15
     },
     image:{
-        height: 120,
-        width: 120,
+        height: 200,
+        width: 200,
         resizeMode: 'contain',
-        backgroundColor: '#ff9c50'
+        backgroundColor: '#fff'
     },
     containerButtom: {
-        flexDirection: 'row',
-        flexWrap: 'wrap'
+        display:'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 });
 
