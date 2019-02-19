@@ -30,7 +30,7 @@
 <b>Pontos futuros:<br/><br/></b>
    -integrar com Firebase e Facebook.<br/>
    
-<b>Pontos futuros:<br/></b>  
+<b>Telas:<br/></b>  
 <img src="/images/gonow1.png">
 <img src="/images/gonow2.png">
 <img src="/images/gonow3.png">
