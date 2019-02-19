@@ -30,9 +30,9 @@
 <b>Pontos futuros:<br/><br/></b>
    -integrar com Firebase e Facebook.<br/>
   
-<img src="https://drive.google.com/open?id=1lFygRkFFfskJS3gYl2aYCTOcSqdJrTTs">
-<img src="https://drive.google.com/open?id=180c0xyQkK3c4fNTZuA4N3LNh1uAcMwdI">
-<img src="https://drive.google.com/open?id=1mL69DwAJv2FWlA0zUBpKN5dVnz1eay01">
-<img src="https://drive.google.com/open?id=1qLiZenWed0wxh-BBGle_wMt_aahsN31u">
-<img src="https://drive.google.com/open?id=1-J55qcO3WloWTBWMVILAjgPfmfggHwdw">
-<img src="https://drive.google.com/open?id=1UV83m1DFeKy5wny59slyudK9MQz16ZZS">
+<img src="/images/gonow1.png">
+<img src="/images/gonow2.png">
+<img src="/images/gonow3.png">
+<img src="/images/gonow4.png">
+<img src="/images/gonow5.png">
+<img src="/images/gonow6.png">
