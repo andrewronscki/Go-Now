@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { logout } from '../store/actions/user';
 import {
     ScrollView,
     View,
@@ -8,21 +10,23 @@ import {
 } from 'react-native';
 import AddPhoto from './AddPhoto';
 import Header from '../components/Header';
+import { Gravatar } from 'react-native-gravatar';
 
 class Profile extends Component {
     logout = () => {
+        this.props.onLogout();
         this.props.navigation.navigate('Auth');
     }
     render() {
-        const options = { email: 'fulanodetal@gmail.com', secure: true};
+        const options = { email: this.props.email, secure: true};
         return (
             <ScrollView>
                 <View style={styles.container}>
-                    <Header />
+                    <Gravatar options={options} style={styles.avatar} />
                     <Text style={styles.title}>Nome</Text>
-                    <Text style={styles.nickname}> Fulano de tal</Text>
+                    <Text style={styles.nickname}>{this.props.name}</Text>
                     <Text style={styles.title}>E-mail</Text>
-                    <Text style={styles.email}>fulanodetal@gmail.com</Text>
+                    <Text style={styles.email}>{this.props.email}</Text>
                     <Text style={styles.title}>Descrição</Text>
                     <Text style={styles.description}>Sou muito legal legal legal legal legal legal legal
                     legallegallegallegallegallegallegallegallegallegallegallegallegallegallegallegallegallegal
@@ -41,7 +45,8 @@ class Profile extends Component {
 }
 const styles = StyleSheet.create({
     container:{
-        flex: 1
+        flex: 1,
+        alignItems: 'center'
     },
     nickname:{
         marginTop: 5,
@@ -78,8 +83,29 @@ const styles = StyleSheet.create({
         marginRight: 20,
         fontWeight: 'bold',
         
-    }
+    },
+    avatar:{
+        width: 100,
+        height: 100,
+        borderRadius: 75,
+        marginTop: 10,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     
 });
 
-export default Profile;
+const mapStateToProps = ({ user }) => {
+    return {
+        email: user.email,
+        name: user.name,
+    }
+}
+
+const mapDispatchToProps = dispatch  => {
+    return {
+        onLogout: () => dispatch(logout())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile)

@@ -14,20 +14,10 @@ import Chat from './screens/Chat';
 import EventMember from './screens/EventMember';
 import Post from './components/Post';
 
-const MainRoutes = {
-    EventMember: {
-        name: 'EventMember',
-        screen: EventMember,
-    },
-    Feed: {
-        name: 'Feed',
-        screen: Feed,
-    }
-}
-
-const MainNavigator = createSwitchNavigator(MainRoutes, {
-    initialRouteName: 'Feed'
-});
+export const EventMemberRouter = createSwitchNavigator({
+    EventMember: EventMember,
+    Feed: Feed
+ });
 
 const authRouter = createStackNavigator({
     Login: {screen: Login, navigationOptions: {title:'Login'}},
@@ -40,13 +30,13 @@ const authRouter = createStackNavigator({
     Profile: Profile,
     Auth: authRouter
 },{
-    initialRouteName: 'Profile'
+    initialRouteName: 'Auth'
 });
 
 const MenuRoutes = {
     Feed: {
         name: 'Feed',
-        screen: eventOrFeedRouter,
+        screen: Feed,
         navigationOptions: {
             title: 'Eventos',
             tabBarIcon: ({ tintColor }) =>
@@ -80,8 +70,7 @@ const MenuConfig = {
     }
 }
 
-
-const MenuNavigator = createBottomTabNavigator(MenuRoutes, MenuConfig, MainNavigator);
+const MenuNavigator = createBottomTabNavigator(MenuRoutes, MenuConfig);
 
 export default MenuNavigator;
 
