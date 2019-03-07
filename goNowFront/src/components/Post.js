@@ -57,9 +57,15 @@ class Post extends Component {
                 onCancelPressed={() => {
                     this.hideAlert();
                 }}
+<<<<<<< .mine
                 onConfirmPressed={() => 
                     this.props.navigation.navigate('EventMember')
                 }
+=======
+                onConfirmPressed={() => 
+                    this.props.navigation.navigate('EventMember')}
+
+>>>>>>> .theirs
                 />
             </TouchableOpacity>       
         )

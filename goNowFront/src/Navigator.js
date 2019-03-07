@@ -13,6 +13,19 @@ import Register from './screens/Register';
 import Chat from './screens/Chat';
 import EventMember from './screens/EventMember';
 
+<<<<<<< .mine
+
+
+
+
+
+=======
+export const EventMemberRouter = createSwitchNavigator({
+    EventMember: EventMember,
+    Feed: Feed
+ });
+
+>>>>>>> .theirs
 const authRouter = createStackNavigator({
     Login: {screen: Login, navigationOptions: {title:'Login'}},
     Register: {screen: Register, navigationOptions: {title: 'Register'}},
@@ -24,8 +37,13 @@ const authRouter = createStackNavigator({
     Profile: Profile,
     Auth: authRouter
 },{
+<<<<<<< .mine
     initialRouteName: 'Auth'
 })
+=======
+    initialRouteName: 'Auth'
+});
+>>>>>>> .theirs
 
 const MenuRoutes = {
     Feed: {
