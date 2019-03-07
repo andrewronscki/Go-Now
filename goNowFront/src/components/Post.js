@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux'
 import {
     StyleSheet,
     View,
@@ -8,8 +9,6 @@ import {
     TouchableOpacity 
 } from 'react-native';
 import AwesomeAlert from 'react-native-awesome-alerts';
-import EventMember from '../screens/EventMember';
-import MenuNavigator from '../Navigator';
 
 class Post extends Component {
     
@@ -59,7 +58,8 @@ class Post extends Component {
                     this.hideAlert();
                 }}
                 onConfirmPressed={() => 
-                    this.props.navigation.navigate('EventMember')}
+                    this.props.navigation.navigate('EventMember')
+                }
                 />
             </TouchableOpacity>       
         )

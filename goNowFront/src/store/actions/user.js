@@ -1,4 +1,5 @@
 import { USER_LOGGED_IN, USER_LOGGED_OUT } from './actionsTypes'
+import axios from 'axios'
 
 export const login = user => {
     return {

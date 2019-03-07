@@ -12,26 +12,20 @@ import Login from './screens/Login';
 import Register from './screens/Register';
 import Chat from './screens/Chat';
 import EventMember from './screens/EventMember';
-import Post from './components/Post';
-
-export const EventMemberRouter = createSwitchNavigator({
-    EventMember: EventMember,
-    Feed: Feed
- });
 
 const authRouter = createStackNavigator({
     Login: {screen: Login, navigationOptions: {title:'Login'}},
     Register: {screen: Register, navigationOptions: {title: 'Register'}},
  },{
      initialRouteName: 'Login'
- });
+ })
 
  const loginOrProfileRouter = createSwitchNavigator({
     Profile: Profile,
     Auth: authRouter
 },{
     initialRouteName: 'Auth'
-});
+})
 
 const MenuRoutes = {
     Feed: {
@@ -72,5 +66,5 @@ const MenuConfig = {
 
 const MenuNavigator = createBottomTabNavigator(MenuRoutes, MenuConfig);
 
-export default MenuNavigator;
+export default (MenuNavigator);
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import {
     View,
     Text,
@@ -14,6 +15,8 @@ import {
 import ImagePicker from 'react-native-image-picker';
 import icon from '../../assets/imgs/addIcon.png';
 
+const noUser = 'Você precisa estar logado para adicionar imagem'
+
 class AddPhoto extends Component {
     state = {
         image1: null,
@@ -25,74 +28,109 @@ class AddPhoto extends Component {
     }
     
     pickImage1 = () => {
+        if (!this.props.name){
+            Alert.alert('Falha!', noUser)
+            return
+        }
+
         ImagePicker.showImagePicker({
             title: 'Escolha a imagem',
             maxHeight: 600,
             maxWidth: 800
         }, res => {
             if (!res.didCancel) {
-                this.setState({ image1: { uri: res.uri, base64: res.data } });
+                this.setState({ image1: { uri: res.uri, base64: res.data } })
             }
-        });
+        })
     }
     pickImage2 = () => {
+        if (!this.props.name){
+            Alert.alert('Falha!', noUser)
+            return
+        }
+
         ImagePicker.showImagePicker({
             title: 'Escolha a imagem',
             maxHeight: 600,
             maxWidth: 800
         }, res => {
             if (!res.didCancel) {
-                this.setState({ image2: { uri: res.uri, base64: res.data } });
+                this.setState({ image2: { uri: res.uri, base64: res.data } })
             }
-        });
+        })
     }
     pickImage3 = () => {
+        if (!this.props.name){
+            Alert.alert('Falha!', noUser)
+            return
+        }
+
         ImagePicker.showImagePicker({
             title: 'Escolha a imagem',
             maxHeight: 600,
             maxWidth: 800
         }, res => {
             if (!res.didCancel) {
-                this.setState({ image3: { uri: res.uri, base64: res.data } });
+                this.setState({ image3: { uri: res.uri, base64: res.data } })
             }
-        });
+        })
     }
     pickImage4 = () => {
+        if (!this.props.name){
+            Alert.alert('Falha!', noUser)
+            return
+        }
+
         ImagePicker.showImagePicker({
             title: 'Escolha a imagem',
             maxHeight: 600,
             maxWidth: 800
         }, res => {
             if (!res.didCancel) {
-                this.setState({ image4: { uri: res.uri, base64: res.data } });
+                this.setState({ image4: { uri: res.uri, base64: res.data } })
             }
-        });
+        })
     }
     pickImage5 = () => {
+        if (!this.props.name){
+            Alert.alert('Falha!', noUser)
+            return
+        }
+
         ImagePicker.showImagePicker({
             title: 'Escolha a imagem',
             maxHeight: 600,
             maxWidth: 800
         }, res => {
             if (!res.didCancel) {
-                this.setState({ image5: { uri: res.uri, base64: res.data } });
+                this.setState({ image5: { uri: res.uri, base64: res.data } })
             }
-        });
+        })
     }
     pickImage6 = () => {
+        if (!this.props.name){
+            Alert.alert('Falha!', noUser)
+            return
+        }
+
         ImagePicker.showImagePicker({
             title: 'Escolha a imagem',
             maxHeight: 600,
             maxWidth: 800
         }, res => {
             if (!res.didCancel) {
-                this.setState({ image6: { uri: res.uri, base64: res.data } });
+                this.setState({ image6: { uri: res.uri, base64: res.data } })
             }
-        });
+        })
+
     }
 
     save = async () => {
-        Alert.alert('Imagem adicionada!');
+        if (!this.props.name) {
+            Alert.alert('Falha!', noUser)
+            return
+        }
+        Alert.alert('Imagem adicionada!')
     }
 
     render() {
@@ -184,4 +222,12 @@ const styles = StyleSheet.create({
     }
 });
 
-export default AddPhoto;
+const mapStateToProps = ({ user }) => {
+    return {
+        email: user.email,
+        name: user.name,
+    }
+}
+
+export default connect(mapStateToProps)(AddPhoto)
+//export default AddPhoto;
